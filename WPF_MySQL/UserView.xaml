@@ -1,0 +1,62 @@
+﻿<Window x:Class="WPF_MySQL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_MySQL"
+        mc:Ignorable="d"
+        Title="WPF-MySql User CRUD" Height="230" Width="370" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="resources/person.png">
+    <Grid>
+        <DockPanel>
+            <ToolBar x:Name="toolbarNavigation" DockPanel.Dock="Top" Width="auto" Height="32">
+                <Button x:Name="btnFirst" ToolTip="Muestra el primer registro" Click="btnFirst_Click">
+                    <Image Source="resources/first.png" Width="24"></Image>
+                </Button>
+                <Button x:Name="btnPrevious" ToolTip="Muestra el registro anterior" Click="btnPrevious_Click">
+                    <Image Source="resources/previous.png" Width="24"></Image>
+                </Button>
+                <Button x:Name="btnNext" ToolTip="Muestra el siguiente registro" Click="btnNext_Click">
+                    <Image Source="resources/next.png" Width="24"></Image>
+                </Button>
+                <Button x:Name="btnLast" ToolTip="Muestra el último registro" Click="btnLast_Click">
+                    <Image Source="resources/last.png" Width="24"></Image>
+                </Button>
+                <Separator/>
+                <Button x:Name="btnInsert" ToolTip="Inserta un registro" Click="btnInsert_Click">
+                    <Image Source="resources/new.png" Width="24"></Image>
+                </Button>
+                <Button x:Name="btnSave" ToolTip="Guarda un registro" Click="btnSave_Click">
+                    <Image Source="resources/save.png" Width="24"></Image>
+                </Button>
+                <Button x:Name="btnDelete" ToolTip="Borra un registro" Click="btnDelete_Click">
+                    <Image Source="resources/delete.png" Width="24"></Image>
+                </Button>
+                <Separator/>
+                <Button x:Name="btnTable" ToolTip="Mostrar los registros en una tabla" Click="btnTable_Click">
+                    <Image Source="resources/table.png" Width="24"></Image>
+                </Button>
+                <Separator/>
+            </ToolBar>
+            <Grid x:Name="gridUsers" DockPanel.Dock="Bottom" Visibility="Visible">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.75*"></ColumnDefinition>
+                    <ColumnDefinition Width="2.25*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Grid.Column="0" Grid.Row="0" Content="ID" Height="26" Width="72" Margin="10, 5, 5, 5"/>
+                <Label Grid.Column="0" Grid.Row="1" Content="Nombre" Height="26" Width="72" Margin="10, 5, 5, 5"/>
+                <Label Grid.Column="0" Grid.Row="2" Content="Apellidos" Height="26" Width="72" Margin="10, 5, 5, 5"/>
+                <Label Grid.Column="0" Grid.Row="3" Content="Timestamp" Height="26" Width="72" Margin="10, 5, 5, 5"/>
+                <TextBox Grid.Column="1" Grid.Row="0" x:Name="txtId" TextWrapping="Wrap" Text="" Height="24" Width="50" Margin="5, 5, 5, 5" HorizontalAlignment="Left" IsEnabled="False"/>
+                <TextBox Grid.Column="1" Grid.Row="1" x:Name="txtName" TextWrapping="Wrap" Text="" Height="24" Width="240" Margin="5, 5, 5, 5" HorizontalAlignment="Left" TextChanged="txtName_TextChanged"/>
+                <TextBox Grid.Column="1" Grid.Row="2" x:Name="txtSurname" TextWrapping="Wrap" Text="" Height="24" Width="240" Margin="5, 5, 5, 5" HorizontalAlignment="Left" TextChanged="txtSurname_TextChanged"/>
+                <TextBox Grid.Column="1" Grid.Row="3" x:Name="txtTimestamp" TextWrapping="Wrap" Text=""  Height="24" Width="240" Margin="5, 5, 5, 5" HorizontalAlignment="Left" IsEnabled="False"/>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Window>
