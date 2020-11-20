@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_MySQL"
         mc:Ignorable="d"
-        Title="WPF-MySql User CRUD" Height="230" Width="370" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="resources/person.png">
+        Title="WPF-MySql User CRUD" Height="230" Width="370" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="resources/person.png" Closing="Window_Closing">
     <Grid>
         <DockPanel>
             <ToolBar x:Name="toolbarNavigation" DockPanel.Dock="Top" Width="auto" Height="32">

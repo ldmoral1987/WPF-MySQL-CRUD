@@ -33,6 +33,7 @@ namespace WPF_MySQL
             startAppComponents();
         }
 
+        // Inicializa los componentes de la aplicación (controlador y modelo)
         private void startAppComponents()
         {
             // Se inicializan los componentes de la aplicación
@@ -43,7 +44,7 @@ namespace WPF_MySQL
             getFirstUser();
         }
 
-
+        // Obtiene el primer usuario
         private void getFirstUser()
         {
             // Se obtiene el primer registro de la tabla
@@ -59,6 +60,7 @@ namespace WPF_MySQL
             isNewRegister = false;
         }
 
+        // Actualiza la vista
         private void updateView(UserEntity user)
         {
             // Se actualiza la vista con los datos del usuario recibidos
@@ -71,6 +73,7 @@ namespace WPF_MySQL
             }
         }
 
+        // Limpia la vista
         private void clearView()
         {
             // Se limpian los controles de la interfaz
@@ -80,6 +83,7 @@ namespace WPF_MySQL
             txtTimestamp.Text = "";
         }
 
+        // Manejador de eventos del botón tabla
         private void btnTable_Click(object sender, RoutedEventArgs e)
         {
             // Se obtienen todos los registros de la tabla
@@ -91,6 +95,7 @@ namespace WPF_MySQL
             tableView.Show();
         }
 
+        // Manejador de eventos del botón primer registro
         private void btnFirst_Click(object sender, RoutedEventArgs e)
         {
             // Se obtiene el primer registro de la tabla
@@ -110,6 +115,7 @@ namespace WPF_MySQL
             }
         }
 
+        // Manejador de eventos del botón registro anterior
         private void btnPrevious_Click(object sender, RoutedEventArgs e)
         {
             // Se obtiene el registro anterior de la tabla (con respecto al actual)
@@ -129,6 +135,7 @@ namespace WPF_MySQL
             }
         }
 
+        // Manejador de eventos del botón registro siguiente
         private void btnNext_Click(object sender, RoutedEventArgs e)
         {
             // Se obtiene el registro siguiente de la tabla (con respecto al actual)
@@ -147,6 +154,7 @@ namespace WPF_MySQL
             }
         }
 
+        // Manejador de eventos del botón registro último
         private void btnLast_Click(object sender, RoutedEventArgs e)
         {
             // Se obtiene el último registro de la tabla
@@ -166,6 +174,7 @@ namespace WPF_MySQL
             }
         }
 
+        // Manejador de eventos del botón insertar
         private void btnInsert_Click(object sender, RoutedEventArgs e)
         {
             // Se limpia la ventana para permitir al usuario insertar
@@ -176,6 +185,7 @@ namespace WPF_MySQL
             isNewRegister = true;
         }
 
+        // Manejador de eventos del botón guardar
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             if (isNewRegister && txtName.Text != "" && txtSurname.Text != "")
@@ -249,6 +259,7 @@ namespace WPF_MySQL
             }
         }
 
+        // Manejador de eventos del botón borrar
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
             // Si el registro no es nuevo, entonces se permite borrarlo
@@ -271,16 +282,28 @@ namespace WPF_MySQL
             }
         }
 
+        // Manejador de eventos del texto txtName
+        // Cuando se cambia el texto, se marca el registro con cambios
         private void txtName_TextChanged(object sender, TextChangedEventArgs e)
         {
             // El registro se marca con cambios
             isRegisterChanged = true;
         }
 
+        // Manejador de eventos del texto txtSurname
+        // Cuando se cambia el texto, se marca el registro con cambios
         private void txtSurname_TextChanged(object sender, TextChangedEventArgs e)
         {
             // El registro se marca con cambios
             isRegisterChanged = true;
+        }
+
+        // Manejador de eventos de cierre de ventana
+        // Cierra la conexión de la base de datos al cerrar la ventana
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            // Se cierra la conexión con la base de datos
+            this.controller.disconnect();
         }
     }
 }

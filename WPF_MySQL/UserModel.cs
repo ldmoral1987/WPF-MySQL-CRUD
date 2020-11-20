@@ -75,6 +75,7 @@ namespace WPF_MySQL
             return user;
         }
 
+        // Devuelve el último usuario
         public UserEntity getLastUser()
         {
             // Se crea un objeto usuario vacío
@@ -88,6 +89,7 @@ namespace WPF_MySQL
             return user;
         }
 
+        // Devuelve el primer usuario
         public bool addUser(UserEntity user)
         {
             // Se ejecuta la consulta para obtener el primer registro
@@ -95,6 +97,7 @@ namespace WPF_MySQL
             return this.connection.executeInsert(statement);
         }
 
+        // Borra un último usuario
         public bool deleteUser(String id)
         {
             // Se ejecuta la consulta para borrar el registro
@@ -102,6 +105,7 @@ namespace WPF_MySQL
             return this.connection.executeDelete(statement);
         }
 
+        // Actualiza un usuario
         public bool updateUser(UserEntity user)
         {
             // Se ejecuta la consulta para actualizar el registro
@@ -115,6 +119,13 @@ namespace WPF_MySQL
                 return true;
             else 
                 return false;
+        }
+
+        // Cierra la conexión con la base de datos
+        public void disconnect()
+        {
+            // Se cierra la conexión
+            this.connection.disconnect();
         }
     }
 }

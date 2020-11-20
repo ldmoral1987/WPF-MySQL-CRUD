@@ -102,6 +102,7 @@ namespace WPF_MySQL
             return user;
         }
 
+        // Ejecuta una sentencia select para obtener todos los usuarios
         public List<UserEntity> executeSelectAll(String statement)
         {
             // Se crea una entidad de usuario vacía
@@ -143,6 +144,7 @@ namespace WPF_MySQL
             return users;
         }
 
+        // Ejecuta una sentencia insert sobre la base de datos
         public bool executeInsert(String statement)
         {
             // Se crea el comando MySQL
@@ -163,6 +165,7 @@ namespace WPF_MySQL
             }
         }
 
+        // Ejecuta una sentencia delete sobre la base de datos
         public bool executeDelete(String statement)
         {
             // Se crea el comando MySQL
@@ -183,6 +186,7 @@ namespace WPF_MySQL
             }
         }
 
+        // Ejecuta una sentencia update sobre la base de datos
         public bool executeUpdate(String statement)
         {
             // Se crea el comando MySQL

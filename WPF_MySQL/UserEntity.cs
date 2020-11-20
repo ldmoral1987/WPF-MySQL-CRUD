@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace WPF_MySQL
 {
+    // Esta clase representa a la entidad de la base de datos
     public class UserEntity
     {
         private int id;
