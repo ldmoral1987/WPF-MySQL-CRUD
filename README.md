@@ -1,5 +1,5 @@
 # WPF-MySQL-CRUD
-Proyecto **CRUD** **MySQL** en **WPF** con *C#* que implementa **MVC** y **Singleton**. Utilizado en la asignatura de **Desarrollo de Interfaces** (2º de **DAM**)
+Proyecto **CRUD** **MySQL** en **WPF** con *C#* que implementa **MVC** y **Singleton**. Utilizado en el módulo de **Desarrollo de Interfaces** (2º de **DAM**)
 
 # Uso
 <ol>
